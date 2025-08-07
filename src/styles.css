@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", monospace;
+  background-color: #fffbe6;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* 3 sütun sabit */
+.flashcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* HER ZAMAN 3 KOLON */
+  gap: 20px;
+  padding-top: 20px;
+}
+
+/* Kart stilleri */
+.flashcards div {
+  border: 3px solid #ffd966;
+  background: linear-gradient(135deg, #fff2cc, #fce5cd);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #ff9900;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Sabit boyut için */
+  aspect-ratio: 2 / 1;
+  min-height: 150px;
+}
+
+/* Hover efekti */
+.flashcards div:hover {
+  transform: scale(1.03);
+  box-shadow: 6px 6px 0 #cc6600;
+}
+
+/* Seçilen kart */
+div.selected {
+  border: 3px solid #009688;
+  background: linear-gradient(135deg, #a7ffeb, #80cbc4);
+  color: #004d40;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 #00695c;
+}
+
+/* Responsive görünüm (mobilde 1-2 sütuna düşsün) */
+@media (max-width: 900px) {
+  .flashcards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .flashcards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #d62828;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  font-family: "Courier New", monospace;
+  text-shadow: 2px 2px 0 #ffb703, 4px 4px 0 #f77f00;
+}
